@@ -31,7 +31,7 @@ namespace CustomersAPI.Controllers
                 DateOfBirth = createCustomer.DateOfBirth,
                 Age = CreateAge(createCustomer.DateOfBirth),
                 DateCreated = DateTime.Now,
-            };
+            };  
 
             if (!EmailValid(customer.EmailAddress)) {
                 return Redirect(Request.Headers["Referer"].ToString());
@@ -48,7 +48,7 @@ namespace CustomersAPI.Controllers
         public async Task<IActionResult> GetCustomers()
         {
 
-            return Ok(await dbContext.Customer.ToListAsync());
+            return Ok(await dbContext.Customer.ToArrayAsync());
         }
 
 

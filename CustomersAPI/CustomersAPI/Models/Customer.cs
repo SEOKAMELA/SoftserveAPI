@@ -14,11 +14,5 @@ namespace CustomersAPI.Models
         public DateTime  DateCreated { get; set; }
         public DateTime DateEdited { get; set; }
         public bool IsDeleted { get; set; }
-
-        public static bool EmailValid(string email)
-        {
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
-            return regex.IsMatch(email);
-        }
     }
 }
